@@ -80,18 +80,17 @@ typedef struct {
 } Vector;
 
 Vector * crearVector(int n) {
-      Vector* vector = malloc(sizeof(Vector)); // Asignar memoria para el vector
-    if (vector == NULL) { // Comprobar si malloc falló
+    Vector* vector = malloc(sizeof(Vector)); 
+    if (vector == NULL) { 
         return NULL;
     }
-    vector->datos = malloc(n * sizeof(int)); // Asignar memoria para el arreglo dinámico
-    if (vector->datos == NULL) { // Comprobar si malloc falló
-        free(vector); // Liberar memoria asignada para el vector
+    vector->datos = malloc(n * sizeof(int));
+    if (vector->datos == NULL) { 
+        free(vector); 
         return NULL;
     }
-    vector->capacidad = n; // Asignar la capacidad del vector
-
-    // Inicializar cada elemento del arreglo a 0
+    vector->capacidad = n; 
+  
     for (int i = 0; i < n; i++) {
         vector->datos[i] = 0;
     } 
@@ -104,7 +103,7 @@ Programe la función void asignarValor(Vector * v, int i, int valor),
 la cual asigna el valor a la posición i del vector v.
 */
 void asignarValor(Vector * v, int i, int valor) {
-
+  v->datos[i]=valor;
 }
 
 /*
