@@ -223,3 +223,30 @@ In function ‘strncpy’,
 cc1: all warnings being treated as errors
 Compilation failed
 bde9137
+Fri 17 Mar 2023 05:33:32 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘crearPersona’:
+exercises.c:58:22: error: returning ‘int’ from a function with return type ‘Persona *’ makes pointer from integer without a cast [-Werror=int-conversion]
+   58 |   if(p==NULL) return EXIT_FAILURE;
+      |                      ^~~~~~~~~~~~
+In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/string.h:535,
+                 from test.c:3:
+In function ‘strncpy’,
+    inlined from ‘crearPersona’ at exercises.c:60:3:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/string_fortified.h:95:10: error: ‘__builtin_strncpy’ specified bound 30 equals destination size [-Werror=stringop-truncation]
+   95 |   return __builtin___strncpy_chk (__dest, __src, __len,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   96 |                                   __glibc_objsize (__dest));
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~
+In function ‘strncpy’,
+    inlined from ‘crearPersona’ at exercises.c:61:3:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/bits/string_fortified.h:95:10: error: ‘__builtin_strncpy’ specified bound 11 equals destination size [-Werror=stringop-truncation]
+   95 |   return __builtin___strncpy_chk (__dest, __src, __len,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   96 |                                   __glibc_objsize (__dest));
+      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e1d8f8e
