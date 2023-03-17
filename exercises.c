@@ -85,6 +85,11 @@ Vector * crearVector(int n) {
         return NULL;
     }
   vector->datos = (int *)calloc(n, sizeof(int));
+    if (vector->datos == NULL) { 
+        
+        return NULL;
+    }
+    vector->capacidad = n; 
   
   return vector;
 }
@@ -132,5 +137,6 @@ void sumaV2(int a1, int a2, int b1, int b2, Vector *c){
   asignarValor(a, 1, a2);
   asignarValor(b, 0, b1);
   asignarValor(b, 1, b2);
+  
   sumaV(a, b, c);
 }
