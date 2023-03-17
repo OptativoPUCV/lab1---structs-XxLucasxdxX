@@ -95,7 +95,7 @@ Vector * crearVector(int n) {
     for (int i = 0; i < n; i++) {
         vector->datos[i] = 0;
     } 
-  return NULL;
+  return vector;
 }
 
 /*
