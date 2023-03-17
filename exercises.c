@@ -80,7 +80,22 @@ typedef struct {
 } Vector;
 
 Vector * crearVector(int n) {
-   return NULL;
+      Vector* vector = malloc(sizeof(Vector)); // Asignar memoria para el vector
+    if (vector == NULL) { // Comprobar si malloc falló
+        return NULL;
+    }
+    vector->datos = malloc(n * sizeof(int)); // Asignar memoria para el arreglo dinámico
+    if (vector->datos == NULL) { // Comprobar si malloc falló
+        free(vector); // Liberar memoria asignada para el vector
+        return NULL;
+    }
+    vector->capacidad = n; // Asignar la capacidad del vector
+
+    // Inicializar cada elemento del arreglo a 0
+    for (int i = 0; i < n; i++) {
+        vector->datos[i] = 0;
+    } 
+  return NULL;
 }
 
 /*
